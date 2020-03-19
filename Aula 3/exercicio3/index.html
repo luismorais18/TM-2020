@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="titulo">Exercicio 3</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="content">
+
+        <h1 class="titulo">Exercício 3</h1>
+
+        <a id="link" href="www.google.pt">Google</a>
+        <div id="innerHtml"></div>
+
+        <button onclick="preencherTagHtml()">Valores dos atributos do link</button>
+        <button onclick="preencheCorVermelha()">Cor dos títulos para vermelho</button>
+
+        <h1 class="titulo">Tabela</h1>
+        <table class="table">
+            <tr>
+                <th id="td1" onclick="tabela(this.id)">0 0</th>
+                <th id="td2" onclick="tabela(this.id)">0 1</th>
+            </tr>
+            <tr>
+                <td id="td3" onclick="tabela(this.id)">1 0</td>
+                <td id="td4" onclick="tabela(this.id)">novoValor</td>
+            </tr>
+            <tr>
+                <td id="td5" onclick="tabela(this.id)">2 0</td>
+                <td id="td6" onclick="tabela(this.id)">2 1</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
