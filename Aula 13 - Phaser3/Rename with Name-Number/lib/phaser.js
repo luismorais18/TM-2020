@@ -72047,38 +72047,37 @@ Phaser.Loader.prototype = {
     },
 
     /**
-    * Adds a Sprite Sheet to the current load queue.
-    * 
-    * The file is **not** loaded immediately after calling this method. The file is added to the queue ready to be loaded when the loader starts.
-    *
-    * To clarify the terminology that Phaser uses: A Sprite Sheet is an image containing frames, usually of an animation, that are all equal
-    * dimensions and often in sequence. For example if the frame size is 32x32 then every frame in the sprite sheet will be that size. 
-    * Sometimes (outside of Phaser) the term "sprite sheet" is used to refer to a texture atlas.
-    * A Texture Atlas works by packing together images as best it can, using whatever frame sizes it likes, often with cropping and trimming
-    * the frames in the process. Software such as Texture Packer, Flash CC or Shoebox all generate texture atlases, not sprite sheets.
-    * If you've got an atlas then use `Loader.atlas` instead.
-    * 
-    * The key must be a unique String. It is used to add the image to the Phaser.Cache upon successful load.
-    *
-    * Retrieve the file via `Cache.getImage(key)`. Sprite sheets, being image based, live in the same Cache as all other Images.
-    * 
-    * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
-    * 
-    * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
-    * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension.
-    * If you do not desire this action then provide a URL.
-    *
-    * @method Phaser.Loader#spritesheet
-    * @param {string} key - Unique asset key of the sheet file.
-    * @param {string} url - URL of the sprite sheet file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
-    * @param {number} frameWidth - Width in pixels of a single frame in the sprite sheet.
-    * @param {number} frameHeight - Height in pixels of a single frame in the sprite sheet.
-    * @param {number} [frameMax=-1] - How many frames in this sprite sheet. If not specified it will divide the whole image into frames.
-    * @param {number} [margin=0] - If the frames have been drawn with a margin, specify the amount here.
-    * @param {number} [spacing=0] - If the frames have been drawn with spacing between them, specify the amount here.
-    * @return {Phaser.Loader} This Loader instance.
-    */
-    spritesheet: function (key, url, frameWidth, frameHeight, frameMax, margin, spacing) {
+     * Adds a Sprite Sheet to the current load queue.
+     *
+     * The file is **not** loaded immediately after calling this method. The file is added to the queue ready to be loaded when the loader starts.
+     *
+     * To clarify the terminology that Phaser uses: A Sprite Sheet is an image containing frames, usually of an animation, that are all equal
+     * dimensions and often in sequence. For example if the frame size is 32x32 then every frame in the sprite sheet will be that size.
+     * Sometimes (outside of Phaser) the term "sprite sheet" is used to refer to a texture atlas.
+     * A Texture Atlas works by packing together images as best it can, using whatever frame sizes it likes, often with cropping and trimming
+     * the frames in the process. Software such as Texture Packer, Flash CC or Shoebox all generate texture atlases, not sprite sheets.
+     * If you've got an atlas then use `Loader.atlas` instead.
+     *
+     * The key must be a unique String. It is used to add the image to the Phaser.Cache upon successful load.
+     *
+     * Retrieve the file via `Cache.getImage(key)`. Sprite sheets, being image based, live in the same Cache as all other Images.
+     *
+     * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
+     *
+     * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
+     * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension.
+     * If you do not desire this action then provide a URL.
+     *
+     * @method Phaser.Loader#spritesheet
+     * @param {string} key - Unique asset key of the sheet file.
+     * @param {string} url - URL of the sprite sheet file. If undefined or `null` the url will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
+     * @param {{frameHeight: number, frameWidth: number}} frameWidth - Width in pixels of a single frame in the sprite sheet.
+     * @param {number} [frameMax=-1] - How many frames in this sprite sheet. If not specified it will divide the whole image into frames.
+     * @param {number} [margin=0] - If the frames have been drawn with a margin, specify the amount here.
+     * @param {number} [spacing=0] - If the frames have been drawn with spacing between them, specify the amount here.
+     * @return {Phaser.Loader} This Loader instance.
+     */
+    spritesheet: function (key, url, frameWidth, frameMax, margin, spacing) {
 
         if (frameMax === undefined) { frameMax = -1; }
         if (margin === undefined) { margin = 0; }
@@ -73080,7 +73079,7 @@ Phaser.Loader.prototype = {
                     break;
 
                 case "spritesheet":
-                    this.spritesheet(file.key, file.url, file.frameWidth, file.frameHeight, file.frameMax, file.margin, file.spacing);
+                    this.spritesheet(file.key, file.url, file.frameWidth, file.frameMax, file.margin, file.spacing);
                     break;
 
                 case "video":

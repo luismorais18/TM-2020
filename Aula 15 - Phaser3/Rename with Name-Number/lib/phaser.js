@@ -100633,7 +100633,7 @@ var LoaderPlugin = new Class({
         switch (file.type)
         {
             case 'spritesheet':
-                entry = this.spritesheet(key, file.url, file.config, file.xhrSettings);
+                entry = this.spritesheet(key, file.url, file.config);
                 break;
 
             case 'atlas':
